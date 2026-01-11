@@ -1,7 +1,9 @@
 :root {
   --accent: #2563eb;
-  --text: #111827;
-  --muted: #6b7280;
+  --accent-soft: #eff6ff;
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --text: #0f172a;
+  --muted: #64748b;
   --border: #e5e7eb;
 }
 
@@ -28,17 +30,18 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 2px solid var(--border);
-  padding-bottom: 16px;
-  margin-bottom: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.3rem;
+  letter-spacing: 0.04em;
 }
 
 .subtitle {
-  margin-top: 4px;
+  margin-top: 6px;
   color: var(--accent);
   font-weight: 500;
 }
@@ -54,19 +57,33 @@ body {
 }
 
 section {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 48px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin-top: 6px;
 }
 
 .item {
   margin-bottom: 16px;
+}
+
+.item.minor strong {
+  font-weight: 500;
 }
 
 .item-header {
@@ -83,41 +100,56 @@ h2 {
 
 .date {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 ul {
-  margin: 6px 0 0 18px;
+  margin: 8px 0 0 18px;
 }
 
 .skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .tags span {
-  background: #eff6ff;
+  background: var(--accent-soft);
   color: #1e40af;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  box-shadow: 0 0 0 1px var(--accent-glow);
 }
 
-.inline-list {
-  list-style: none;
-  padding-left: 0;
+.project-card {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+.certs {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.95rem;
+  gap: 10px;
+}
+
+.certs span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text);
 }
 
 /* PRINT */
