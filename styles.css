@@ -182,3 +182,29 @@ ul {
     padding: 0;
   }
 }
+
+@media print {
+
+  /* Prevent awkward splits */
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+
+  /* Slightly tighten spacing so everything fits A4 */
+  section {
+    margin-bottom: 18px;
+  }
+
+  .project-card {
+    margin-bottom: 12px;
+  }
+
+  ul {
+    margin-top: 4px;
+  }
+}
