@@ -1,3 +1,6 @@
+/* =========================
+   VARIABLES
+========================= */
 :root {
   --accent: #2563eb;
   --accent-soft: #eff6ff;
@@ -7,58 +10,86 @@
   --border: #e5e7eb;
 }
 
+/* =========================
+   RESET & BASE
+========================= */
 * {
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
   background: #ffffff;
   color: var(--text);
 }
 
+/* =========================
+   LAYOUT
+========================= */
 .cv {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 0 24px 40px;
+  margin: 32px auto;
+  padding: 0 24px 32px;
 }
 
+/* =========================
+   HEADER
+========================= */
 .header {
   display: flex;
   justify-content: space-between;
-  gap: 32px;
+  gap: 28px;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
   border-bottom: 2px solid var(--border);
-  padding-bottom: 22px;
-  margin-bottom: 30px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
+  font-weight: 800;
   letter-spacing: 0.04em;
 }
 
 .subtitle {
   margin-top: 6px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--accent);
+  letter-spacing: 0.02em;
 }
 
+/* =========================
+   HEADER SUMMARY
+========================= */
+.header-left .summary {
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+
+.header-left .summary li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   CONTACT
+========================= */
 .contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.9rem;
   color: var(--muted);
+  padding-left: 8px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .contact-item svg {
@@ -77,90 +108,158 @@ body {
   text-decoration: underline;
 }
 
+/* =========================
+   SECTIONS & HEADINGS
+========================= */
 section {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 h2 {
+  margin-top: 20px;
+  margin-bottom: 6px;
   font-size: 1.05rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 14px;
   position: relative;
 }
 
 h2::after {
   content: "";
   display: block;
+  width: 48px;
   height: 2px;
-  width: 52px;
+  margin-top: 5px;
   background: linear-gradient(90deg, var(--accent), transparent);
-  margin-top: 6px;
 }
 
+/* Education anchors page */
+section:first-of-type h2 {
+  margin-top: 0;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul {
+  margin: 6px 0 0 18px;
+}
+
+ul li {
+  margin-bottom: 2px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
 .item {
-  margin-bottom: 16px;
-}
-
-.item.minor strong {
-  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   font-weight: 600;
+  margin-bottom: 2px;
 }
 
 .item-sub {
-  color: var(--muted);
-  font-size: 0.95rem;
   margin-bottom: 4px;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .date {
-  color: var(--muted);
   font-size: 0.85rem;
+  color: var(--muted);
 }
 
-ul {
-  margin: 8px 0 0 18px;
+.edu-school {
+  font-weight: 500;
+  color: var(--muted);
 }
 
+/* =========================
+   SKILLS
+========================= */
 .skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 14px;
+}
+
+.skills h3 {
+  margin-bottom: 4px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 6px;
+  margin-top: 4px;
 }
 
 .tags span {
-  background: var(--accent-soft);
-  color: #1e3a8a;
+  padding: 4px 8px;
+  font-size: 0.75rem;
   font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  color: #1e3a8a;
+  background: var(--accent-soft);
+  border-radius: 6px;
   box-shadow: 0 0 0 1px var(--accent-glow);
 }
 
+/* =========================
+   PROJECTS
+========================= */
 .project-card {
-  padding: 14px 16px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
   border: 1px solid #dbe3f0;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   border-radius: 10px;
-  margin-bottom: 16px;
   background: linear-gradient(180deg, #ffffff, #fbfdff);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
+.project-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-tag {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  background: var(--accent-soft);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px var(--accent-glow);
+  white-space: nowrap;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.project-link svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent);
+}
+
+.project-link:hover svg {
+  opacity: 0.8;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
 .certs {
   display: flex;
   flex-wrap: wrap;
@@ -169,42 +268,33 @@ ul {
 
 .certs span {
   padding: 6px 12px;
+  font-size: 0.85rem;
   border-radius: 999px;
   background: linear-gradient(180deg, #ffffff, #f8fafc);
   border: 1px solid var(--border);
-  font-size: 0.85rem;
 }
 
-/* PRINT */
+/* =========================
+   PRINT
+========================= */
 @media print {
   body {
     font-size: 12px;
   }
+
   .cv {
     margin: 0;
     padding: 0;
   }
-}
 
-@media print {
-
-  /* Prevent awkward splits */
+  section,
   .project-card {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   section {
-    break-inside: avoid;
-  }
-
-  /* Slightly tighten spacing so everything fits A4 */
-  section {
-    margin-bottom: 18px;
-  }
-
-  .project-card {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   ul {
